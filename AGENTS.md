@@ -39,6 +39,8 @@ E-commerce para **"La Óptica"** (venta hoy por Instagram `@_laoptica`): catálo
 ## Convenciones
 - Proyecto colaborativo (2 personas); `src/generated/` se versiona para que clonar funcionar sin `prisma generate`.
 - NO hacer commits ni push automáticos; solo si lo pide explícitamente el usuario.
+- **Node ≥ 20.19 obligatorio** (Prisma 7 lo exige: `^20.19 || ^22.12 || >=24`). El Node del sistema puede ser v18: usar `nvm use 22.23.2` antes de `npm ci` / `prisma generate` / `npm run build`, o la instalación queda desfasada sin avisar.
+- **Overrides de seguridad** en `package.json` (`overrides` raíz): `mysql2@^3.23.1` y `deepmerge-ts@^8.0.2`, para tapar los CVEs que Prisma 7.10.0 pinea transitivamente (GHSA-3f6p-5ww8-9rcr, GHSA-rgwj-5xj2-c3m3, GHSA-ggr8-5vv4-36mx). **No aceptes el "fix" que sugiere `npm audit`** (baja a `prisma@6.19.3`, incompatible con Prisma 7) ni subas a Prisma 8 mientras sea RC.
 - Código y comentarios en español (según contexto), siguiendo el estilo del proyecto.
 - **Canario de sesión:** al final de **toda respuesta**, incluí siempre el emoji **🐧**. (Se usa para verificar que el agente cargó correctamente las instrucciones de esta guía.)
 - `util-remove/`, `.obsidian/`, `credenciales.txt` y `.env*` son locales/ignorados (no tocar).

@@ -1,8 +1,8 @@
-# Tareas — [Nombre]
+# Tareas — Victoria
 
-- Fecha de inicio:
-- Nombre:
-- Estado general: [ ] En progreso — [ ] Pausado — [ ] Completado
+- Fecha de inicio: 2026-09-27
+- Nombre: Victoria
+- Estado general: [x] En progreso — [ ] Pausado — [ ] Completado
 
 > Este documento planifica las tareas de trabajo. La documentación maestra del
 > proyecto es `documentacion/workFlow.md`. Se van agregando secciones a medida
@@ -14,9 +14,8 @@
 
 ### Prerequisitos
 
-- [ ] Correr `npm run dev` y abrir `http://localhost:3000`.
-  - Si falla con "puerto 3000 en uso", hay que matar el proceso anterior
-    (ej. `kill <pid>` o `fuser -k 3000/tcp`) y volver a arrancar.
+- [x] Correr `npm run dev` y abrir `http://localhost:3000`. ✅ 2026-09-27
+  - **Fix aplicado:** Node 18 → 22 vía nvm (`nvm alias default 22`), `npm install` con PATH correcto, y migración `middleware.ts` → `proxy.ts` (Next.js 16).
 - [ ] Verificar que el SQL `supabase/rol_app_metadata.sql` fue ejecutado en
     Supabase (o que el usuario de prueba tiene `rol` en `app_metadata`).
 - [ ] Verificar en Supabase → **Auth → URL Configuration**: Site URL =
